@@ -23,9 +23,10 @@ Our server handles the following HTTP features :
 
 ## Understanding the configuration file
 
-Webserv need a configuration file that will be loaded at the beginning of the program, setting up all the necessary parameters. It works in a similar way of Nginx configuration file.
+Webserv need a configuration file that will be loaded at the beginning of the program, setting up all the necessary parameters. It works in a similar way than Nginx configuration file.
 </br>It will allow you to setup the following parameters :
 - `server` -- to define several virtual servers (with multiple server blocks).
+- `server_name` -- to identify a specific server block thanks to host header.
 - `listen` -- to configure on which port the server will be listening (only one `listen` per `server` block).
 - `error` -- to set a path for custom error pages.
 - `location` -- to set parameters for a specific route.
@@ -35,6 +36,10 @@ Webserv need a configuration file that will be loaded at the beginning of the pr
 - `autoindex` -- to list all files present in the targeted directory.
 - `allow_method` -- to define the allowed methods for HTTP requests.
 - `cgi` -- to configure a cgi to execute for a specific file extenstion (php-cgi for .php files for example).
+
+
+
+Here is a short example of a configuration file. 
 
 You can fing some examples in `conf` directory. If testing with your broser, use the browser*.conf files.
 
