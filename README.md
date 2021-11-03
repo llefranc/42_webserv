@@ -1,10 +1,12 @@
 # webserv (@42Paris)
 
-"I’ve never thought philosophy would be so deadly"
+"This is when you finally understand why a URL starts with HTTP"
 
-![Alt text](https://github.com/lucaslefrancq/42_philosophers/blob/main/philo_example.png)
+![Alt text](https://github.com/llefranc/42_webserv/blob/main/webserv_example.png)
 
 ## About
+
+
 
 Philosophers is a project of the mandatory part of the cursus.
 It's only made in C and the main goal was to understand how threads works in language C and use them to solve a logical problem.
