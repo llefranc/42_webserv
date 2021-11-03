@@ -9,8 +9,21 @@
 
 ## About
 
-Webserv is a project of the mandatory part of the cursus that I made with my friend [Helene Herin][2]. It's only made in C++ and was about creating a webserv able to handle one of the most famous web protocol.
+Webserv is a project of the mandatory part of the cursus that I made with my friend [Helene Herin][2]. 
+<br/>It's only made in C++ and was about creating a web server able to handle one of the most famous web protocol, HTTP1.1.
 <br/>Our program is working with a configuration file, so you can setup the port, some routes, the allowed methods and some other basic paramaters for a webserver.
+
+<br/>It's build based on UNIX socket, and since it's an HTTP server you can access web pages using your browser.
+
+Our server handles the following HTTP features :
+- The basics of HTTP protocol (status line / request line, a few headers, and payload).
+- GET, POST and DELETE methods.
+- HTTP response status codes (200, 404, ...).
+- Error pages for the appropriate status code.
+- HTTP redirection (status code 301).
+- CGI, like rendering a .php file thanks to php-cgi for example.
+
+## Understanding the configuration file
 
 </br>It's only made in C and was about creating two programs : one sorting two "special" stacks, and another one checking if the stacks are sorted or not. 
 </br>We were only allowed to modify the two "stacks", called **stack a** and **stack b**, using a set of instruction : 
