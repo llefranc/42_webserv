@@ -46,7 +46,7 @@ Here is a short example of a configuration file, where webserv will :
 - :white_check_mark: : execute `/cgi/*.php` files with php-cgi program.
 - :white_check_mark: : accept only POST requests for URIs targeting `/post`.
 
-You can fing more examples in `conf` directory. If testing with your broser, use the browser*.conf files.
+You can fing more examples in `conf` directory. `www` is a directory which allow you to made request to example files and cases. If testing with your broser, use the browser*.conf files.
 
 ## Building and running the project
 
