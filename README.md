@@ -69,7 +69,7 @@ You can fing more examples in `conf` directory. If testing with your broser, use
 
 5.	Access web pages using your browser.
 	
-	# Example of a valid request made with a browser, with the config file from step 3
+		# Example of a valid request made with a browser, with the config file from step 3
 		http://localhost:8080/cgi/index.php
 
 1. Use `checker` with `-v` option to visualize how push_swap solved the problem
