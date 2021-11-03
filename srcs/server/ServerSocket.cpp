@@ -46,12 +46,12 @@ void ServerSocket::createSocket()
 {
 	// Creating a TCP socket
 	if ((_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-		throw std::runtime_error("Fatal error: socket function failed\n");  // A peaufiner, il ne faut surement pas compleement exit des qu'une fonction bug
+		throw std::runtime_error("Fatal error: socket function failed\n");
 
 	// Setting its options
 	int yes = true;
 	if (setsockopt(_fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1)
-		throw std::runtime_error("Fatal error: setsockopt function failed\n");  // A peaufiner, il ne faut surement pas compleement exit des qu'une fonction bug
+		throw std::runtime_error("Fatal error: setsockopt function failed\n");
 	
 	// Initializing structure for socket information (IP, port..)
 	struct sockaddr_in socketAddr;
@@ -62,7 +62,7 @@ void ServerSocket::createSocket()
 	
 	// Binding the socket to a port
 	if (bind(_fd, (struct sockaddr *) &socketAddr, sizeof(socketAddr)) < 0)
-		throw std::runtime_error("Fatal error: bind function failed\n");  // A peaufiner, il ne faut surement pas compleement exit des qu'une fonction bug
+		throw std::runtime_error("Fatal error: bind function failed\n");
 
 	listen(_fd, _maxClient);
 	printLog(" >> PORT " + convertNbToString(_port) + ": HTTP socket created\n");

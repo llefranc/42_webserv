@@ -9,7 +9,9 @@
 
 ## About
 
-Push_swap is a project of the mandatory part of the cursus.
+Webserv is a project of the mandatory part of the cursus that I made with my friend [Helene Herin][2]. It's only made in C++ and was about creating a webserv able to handle one of the most famous web protocol.
+<br/>Our program is working with a configuration file, so you can setup the port, some routes, the allowed methods and some other basic paramaters for a webserver.
+
 </br>It's only made in C and was about creating two programs : one sorting two "special" stacks, and another one checking if the stacks are sorted or not. 
 </br>We were only allowed to modify the two "stacks", called **stack a** and **stack b**, using a set of instruction : 
 - `sa` *(swap a)* -- swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements).
@@ -24,7 +26,6 @@ Push_swap is a project of the mandatory part of the cursus.
 - `rrb` *(reverse rotate b)* -- shift down all elements of stack b by 1. The flast element becomes the first one.
 - `rrr` -- rra and rrb at the same time.
 
-In order to succeed, a good comprehension of what is **complexity**, and how the best **sorting algorithms** work was necessary. 
 
 ## How I solved the problem
 
@@ -63,10 +64,18 @@ For small list of integers (< 5 numbers) I used custom sortings to optimize the 
 6. Use `checker` with `-v` option to visualize how push_swap solved the problem
 	
 		./push_swap 2 1 5 4 | ./checker -v 2 1 5 4
-   
+
+http://localhost:8080/www/tests/test_cgi/index.php (browser.conf)
+http://localhost:8080/index
+http://localhost:8080/file_doesnt_exist
+
+curl -H "host:index_test" http://localhost:8080/index
+curl -H "host:localhost" http://localhost:8080/www/tests/test_cgi/hello_world.php
+
 
 ## Sources
 
 - [Quicksort algorithm explained step by step][7]
 
 [1]: https://github.com/llefranc/42_webserv/blob/main/webserv.en.subject.pdf
+[2]: https://github.com/hherin
