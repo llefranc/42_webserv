@@ -42,9 +42,9 @@ Webserv need a configuration file that will be loaded at the beginning of the pr
 Here is a short example of a configuration file, where webserv will : 
 - :white_check_mark: : serve requests made on port 8080.
 - :white_check_mark: : have custom error pages stored in `./webserv/www/errors/test_changing_path` directory.
-- :white_check_mark: : route request made to `/cgi/*` to `/www/tests/test_cgi` directory.
+- :white_check_mark: : route any requests made to `/cgi/*` to `/www/tests/test_cgi` directory.
 - :white_check_mark: : execute `/cgi/*.php` files with php-cgi program.
-- :white_check_mark: : accept only POST request URIs targeting `/post`.
+- :white_check_mark: : accept only POST requests for URIs targeting `/post`.
 
 You can fing more examples in `conf` directory. If testing with your broser, use the browser*.conf files.
 
