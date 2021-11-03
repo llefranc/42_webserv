@@ -10,8 +10,7 @@
 ## About
 
 Webserv is a project of the mandatory part of the cursus that I made with my friend [Helene Herin][2].
-
-<br/>It's only made in C++ and was about creating a web server able to handle one of the most famous web protocol, HTTP 1.1.
+<br/><br/>It's only made in C++ and was about creating a web server able to handle one of the most famous web protocol, HTTP 1.1.
 Our program is working with a configuration file, so you can setup the port, some routes, the allowed methods and some other basic paramaters for a webserver.
 <br/>It's build based on UNIX sockets, and since it's an HTTP server you can access web pages using your favorite browser.
 
