@@ -1,6 +1,6 @@
 # webserv (@42Paris)
 
-> This project was code for MACOS. Here is the [subject][8].
+> This project was code for MACOS. Here is the [subject][1].
 >
 
 *"This is when you finally understand why a URL starts with HTTP"*
@@ -68,10 +68,5 @@ For small list of integers (< 5 numbers) I used custom sortings to optimize the 
 ## Sources
 
 - [Quicksort algorithm explained step by step][7]
+
 [1]: https://github.com/llefranc/42_webserv/blob/main/webserv.en.subject.pdf
-[2]: https://zestedesavoir.com/tutoriels/607/les-systemes-dexploitation/processus-et-threads/
-[3]: https://cours.polymtl.ca/inf2610/documentation/notes/chap4.pdf
-[4]: https://www.notion.so/philosophers-VM-c60be9c836084edfbcd9c07e29b429c4
-[5]: https://pub.phyks.me/sdz/sdz/la-programmation-systeme-en-c-sous-unix.html#Lesthreads
-[6]: https://sites.uclouvain.be/SystInfo/notes/Theorie/html/Threads/coordination.html
-[7]: https://stackoverflow.com/questions/16400820/how-to-use-posix-semaphores-on-forked-processes-in-c
