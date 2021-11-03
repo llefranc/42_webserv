@@ -63,25 +63,19 @@ For small list of integers (< 5 numbers) I used custom sortings to optimize the 
 1. Download/Clone this repo
 
         git clone https://github.com/llefranc/42_push_swap.git
-
 2. `cd` into the root directory and run `make`
 
         cd 42_push_swap
         make
-
 3.  Run `push_swap` with a list of integers in order to print the list of instructions on stdout.
 	
 		./push_swap 2 1 5 4
-
 4.	Run `checker` with a list of integers to solve manually the stack. It will wait for instruction on stdin. Ctrl+D to stop typing instructions
 	
 		./checker 2 1 5 4
-
-
 5.	Pipe `push_swap` into `checker` with the same list of integers as argument to see if the output of `push_swap` correctly solved the problem
 	
 		./push_swap 2 1 5 4 | ./checker 2 1 5 4
-
 6. Use `checker` with `-v` option to visualize how push_swap solved the problem
 	
 		./push_swap 2 1 5 4 | ./checker -v 2 1 5 4
