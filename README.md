@@ -19,25 +19,24 @@ Our server handles the following HTTP features :
 - GET, POST and DELETE methods.
 - HTTP response status codes (200, 404, ...).
 - Error pages for the appropriate status code.
-- HTTP redirection (status code 301).
-- CGI, like rendering a .php file thanks to php-cgi for example.
+- CGI, like rendering a .php file in your browser thanks to php-cgi for example.
 
 ## Understanding the configuration file
 
-</br>It's only made in C and was about creating two programs : one sorting two "special" stacks, and another one checking if the stacks are sorted or not. 
-</br>We were only allowed to modify the two "stacks", called **stack a** and **stack b**, using a set of instruction : 
-- `sa` *(swap a)* -- swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements).
-- `sb` *(swap b)* -- swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements).
-- `ss` sa and sb at the same time.
-- `pa` *(push a)* -- take the first element at the top of b and put it at the top of a. Do nothing if b is empty.
-- `pb` *(push b)* -- take the first element at the top of a and put it at the top of b. Do nothing if a is empty.
-- `ra` *(rotate a)* -- shift up all elements of stack a by 1. The first element becomes the last one.
-- `rb` *(rotate b)* -- shift up all elements of stack b by 1. The first element becomes the last one.
-- `rr` -- ra and rb at the same time.
-- `rra` *(reverse rotate a)* -- shift down all elements of stack a by 1. The flast element becomes the first one.
-- `rrb` *(reverse rotate b)* -- shift down all elements of stack b by 1. The flast element becomes the first one.
-- `rrr` -- rra and rrb at the same time.
+Webserv need a configuration file that will be loaded at the beginning of the program, setting up all the necessary parameters. It works in a similar way of Nginx configuration file.
+</br>It will allow you to setup the following parameters :
+- `server` -- to define several virtual servers (with multiple server blocks).
+- `listen` -- to configure on which port the server will be listening (only one `listen` per `server` block).
+- `error` -- to set a path for custom error pages.
+- `location` -- to set parameters for a specific route.
+- `index` -- to serve a default file if none match the requested URI.
+- `root` -- to route the requested URI to another directory.
+- `upload_path` -- to set a specific directory for upload requests.
+- `autoindex` -- to list all files present in the targeted directory.
+- `allow_method` -- to define the allowed methods for HTTP requests.
+- `cgi` -- to configure a cgi to execute for a specific file extenstion (php-cgi for .php files for example).
 
+You can fing some examples in `conf` directory. If testing with your broser, use the browser*.conf files.
 
 ## How I solved the problem
 
