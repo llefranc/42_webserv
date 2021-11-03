@@ -69,24 +69,8 @@ You can fing more examples in `conf` directory. If testing with your broser, use
 
 5.	Access web pages using your browser.
 	
-		# Example of a valid request made with a browser, with the config file from step 3
+		# Example of a valid URI to request with a browser, with the config file from step 3
 		http://localhost:8080/cgi/index.php
-
-1. Use `checker` with `-v` option to visualize how push_swap solved the problem
-	
-		./push_swap 2 1 5 4 | ./checker -v 2 1 5 4
-
-http://localhost:8080/www/tests/test_cgi/index.php (browser.conf)
-http://localhost:8080/index
-http://localhost:8080/file_doesnt_exist
-
-curl -H "host:index_test" http://localhost:8080/index
-curl -H "host:localhost" http://localhost:8080/www/tests/test_cgi/hello_world.php
-
-
-## Sources
-
-- [Quicksort algorithm explained step by step][7]
 
 [1]: https://github.com/llefranc/42_webserv/blob/main/webserv.en.subject.pdf
 [2]: https://github.com/hherin
