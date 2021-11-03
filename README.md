@@ -1,52 +1,73 @@
 # webserv (@42Paris)
 
-"This is when you finally understand why a URL starts with HTTP"
+> This project was code for MACOS. Here is the [subject][8].
+>
+
+*"This is when you finally understand why a URL starts with HTTP"*
 
 ![Alt text](https://github.com/llefranc/42_webserv/blob/main/webserv_example.png)
 
 ## About
 
+Push_swap is a project of the mandatory part of the cursus.
+</br>It's only made in C and was about creating two programs : one sorting two "special" stacks, and another one checking if the stacks are sorted or not. 
+</br>We were only allowed to modify the two "stacks", called **stack a** and **stack b**, using a set of instruction : 
+- `sa` *(swap a)* -- swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements).
+- `sb` *(swap b)* -- swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements).
+- `ss` sa and sb at the same time.
+- `pa` *(push a)* -- take the first element at the top of b and put it at the top of a. Do nothing if b is empty.
+- `pb` *(push b)* -- take the first element at the top of a and put it at the top of b. Do nothing if a is empty.
+- `ra` *(rotate a)* -- shift up all elements of stack a by 1. The first element becomes the last one.
+- `rb` *(rotate b)* -- shift up all elements of stack b by 1. The first element becomes the last one.
+- `rr` -- ra and rb at the same time.
+- `rra` *(reverse rotate a)* -- shift down all elements of stack a by 1. The flast element becomes the first one.
+- `rrb` *(reverse rotate b)* -- shift down all elements of stack b by 1. The flast element becomes the first one.
+- `rrr` -- rra and rrb at the same time.
 
+In order to succeed, a good comprehension of what is **complexity**, and how the best **sorting algorithms** work was necessary. 
 
-Philosophers is a project of the mandatory part of the cursus.
-It's only made in C and the main goal was to understand how threads works in language C and use them to solve a logical problem.
-The simulation will stop if all philosophers have eaten enough or if one philosopher die.
+## How I solved the problem
 
-- There are three different version of the algorithm :
-    - Philo_one is about using threads and mutexs
-    - Philo_two is about using threads and semaphores
-    - Philo_three is about using processes and semaphores
+For small list of integers (< 5 numbers) I used custom sortings to optimize the number of instructions. 
+</br>For bigger list, I implemented a variant of quicksort algorithm with several optimizations.
+</br></br>Average nb of insctructions for 100 tests :
+- :white_check_mark: : 3 numbers in `1` instruction *(grade 5/5)*
+- :white_check_mark: : 5 numbers in `9` instructions *(grade 5/5)*
+- :white_check_mark: : 100 numbers in `772` instructions *(grade 4/5)*
+- :white_check_mark: : 500 numbers in `5357` instructions *(grade 5/5)*
 
-- Here is the [subject][1]
-
-`This project was code for MACOS`
-
-### Building and running the project
+## Building and running the project
 
 1. Download/Clone this repo
 
-        git clone https://github.com/llefranc/42_philosophers.git
-2. `cd` into the root directory, then `cd` into philo_x (one, two or three) and run `make`
+        git clone https://github.com/llefranc/42_push_swap.git
 
-        cd 42_philosophers/philo_one
+2. `cd` into the root directory and run `make`
+
+        cd 42_push_swap
         make
 
-3.  run `./philo_x arg1 arg2 arg3 arg4 (arg5)` from the directory philo_x.
-    - arg1 is the number of philosopher
-    - arg2 is the time to die in ms
-    - arg3 is the time to eat in ms
-    - arg4 is the time to sleep in ms
-    - arg5 (optional) is the number of time each philosopher needs to eat to end the simulation
-    
+3.  Run `push_swap` with a list of integers in order to print the list of instructions on stdout.
+	
+		./push_swap 2 1 5 4
+
+4.	Run `checker` with a list of integers to solve manually the stack. It will wait for instruction on stdin. Ctrl+D to stop typing instructions
+	
+		./checker 2 1 5 4
+
+
+5.	Pipe `push_swap` into `checker` with the same list of integers as argument to see if the output of `push_swap` correctly solved the problem
+	
+		./push_swap 2 1 5 4 | ./checker 2 1 5 4
+
+6. Use `checker` with `-v` option to visualize how push_swap solved the problem
+	
+		./push_swap 2 1 5 4 | ./checker -v 2 1 5 4
+   
+
 ## Sources
 
-- [Programmation système en C sous UNIX (FR)][5]
-- [Processus et threads (FR)][2]
-- [Cours sur les threads (FR)][3]
-- [Optimizing philo algo][4]
-- [Comprendre les sémaphores (FR)][6]
-- [How to use sempahores on fork processes][7]
-
+- [Quicksort algorithm explained step by step][7]
 [1]: https://github.com/llefranc/42_webserv/blob/main/webserv.en.subject.pdf
 [2]: https://zestedesavoir.com/tutoriels/607/les-systemes-dexploitation/processus-et-threads/
 [3]: https://cours.polymtl.ca/inf2610/documentation/notes/chap4.pdf
