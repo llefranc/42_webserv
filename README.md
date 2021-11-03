@@ -48,35 +48,31 @@ Here is a short example of a configuration file, where webserv will :
 
 You can fing more examples in `conf` directory. If testing with your broser, use the browser*.conf files.
 
-## How I solved the problem
-
-For small list of integers (< 5 numbers) I used custom sortings to optimize the number of instructions. 
-</br>For bigger list, I implemented a variant of quicksort algorithm with several optimizations.
-</br></br>Average nb of insctructions for 100 tests :
-- :white_check_mark: : 3 numbers in `1` instruction *(grade 5/5)*
-- :white_check_mark: : 5 numbers in `9` instructions *(grade 5/5)*
-- :white_check_mark: : 100 numbers in `772` instructions *(grade 4/5)*
-- :white_check_mark: : 500 numbers in `5357` instructions *(grade 5/5)*
-
 ## Building and running the project
 
 1. Download/Clone this repo
 
-        git clone https://github.com/llefranc/42_push_swap.git
+        git clone https://github.com/llefranc/42_webserv
+
 2. `cd` into the root directory and run `make`
 
-        cd 42_push_swap
+        cd 42_webserv
         make
-3.  Run `push_swap` with a list of integers in order to print the list of instructions on stdout.
+
+3.  Run `webserv` with a configuration file.
 	
-		./push_swap 2 1 5 4
-4.	Run `checker` with a list of integers to solve manually the stack. It will wait for instruction on stdin. Ctrl+D to stop typing instructions
+		./webserv conf/browser.conf
+
+4. Make `curl` request to webserv without omitting host header.
 	
-		./checker 2 1 5 4
-5.	Pipe `push_swap` into `checker` with the same list of integers as argument to see if the output of `push_swap` correctly solved the problem
+		curl -H "host:localhost" http://localhost:8080/cgi/hello_world.php
+
+5.	Access web pages using your browser.
 	
-		./push_swap 2 1 5 4 | ./checker 2 1 5 4
-6. Use `checker` with `-v` option to visualize how push_swap solved the problem
+	# Example of a valid request made with a browser, with the config file from step 3
+		http://localhost:8080/cgi/index.php
+
+1. Use `checker` with `-v` option to visualize how push_swap solved the problem
 	
 		./push_swap 2 1 5 4 | ./checker -v 2 1 5 4
 
