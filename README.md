@@ -37,7 +37,8 @@ Webserv need a configuration file that will be loaded at the beginning of the pr
 - `allow_method` -- to define the allowed methods for HTTP requests.
 - `cgi` -- to configure a cgi to execute for a specific file extenstion (php-cgi for .php files for example).
 
-
+![Alt text](https://github.com/llefranc/42_webserv/blob/main/config_file_example.png)
+https://github.com/llefranc/42_webserv/blob/main/config_file_example.png
 
 Here is a short example of a configuration file. 
 
