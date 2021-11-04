@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Response.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lucaslefrancq <lucaslefrancq@student.42    +#+  +:+       +#+        */
+/*   By: llefranc <llefranc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 14:23:57 by lucaslefran       #+#    #+#             */
-/*   Updated: 2021/06/21 16:33:33 by lucaslefran      ###   ########.fr       */
+/*   Updated: 2021/11/04 19:22:53 by llefranc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -250,13 +250,13 @@ void Response::replaceLocInUri(std::string* uri, const std::string& root, const 
 
 	// Going to the next '/' (for example, case "/authentificate/ok" matched location "/auth" with a root of "/test"
 	//						  >> we need to replace "/authentificate" with "/test" in order to get "/test/ok")
-	if (*it != '/')
+	if (*it != '/' && locName.size() > 1)
 		while (*it && *it != '/')
 			++it;
 	
 	// Replacing beginning of the URI with the root path
 	uri->erase(uri->begin(), it);
-	
+
 	// To correctly append indexs if last '/' is missing
 	if (root[root.size() - 1] != '/')
 		uri->insert(uri->begin(), '/');
@@ -298,6 +298,7 @@ std::string Response::reconstructFullURI(int method,
 {
 	bool fileExist = true;
 	struct stat infFile;
+
 
 	// zero location block match the URI so the URI isn't modified
 	if (!loc.second)
