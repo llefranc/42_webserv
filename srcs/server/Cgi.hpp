@@ -21,6 +21,7 @@
 #include <fstream>
 #include <cstring>
 #include <sstream>
+#include <sys/wait.h>
 
 class CGI
 {
